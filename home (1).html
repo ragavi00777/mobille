@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<head>
+    <title>ELECTERA'26</title>
+    <link rel="stylesheet" href="home.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="home (1).css">
+
+
+</head>
+<body>
+
+<input type="checkbox" id="check">
+
+<div class="navigation">
+    <label for="check" class="checkbtn">
+        <i class="fas fa-bars"></i>
+    </label>
+  <ul class="navigation">
+    <li><a href="#home">Home</a></li>
+    <li><a href="#events">Events</a></li>
+    <li><a href="#timeline">Timeline</a></li>
+    <li><a href="#members">Members</a></li>
+    <li><a href="#contact">Contact</a></li>
+    <li><button>Register</button></li>
+  </ul>
+
+</div>
+
+<div class="lightning-container">
+    <div class="bolt"></div>
+    <div class="bolt"></div>
+    <div class="bolt"></div>
+</div>
+
+<div class="cit">
+    <h1>COIMBATORE INSTITUTE OF TECHNOLOGY</h1>
+    <h2>DEPARTMENT OF ELECTRICAL AND ELECTRONICS ENGINEERING</h2>
+    <div class="presents-text">PRESENTS</div>
+    <div class="electera-text">ELECT-ERA 2026</div>
+</div>
+
+
+<div class="prizepool">
+  <div class="prizebox">
+  <h2>PRIZE POOL</h2>
+  <h2 id="prizeValue">₹ 0</h2>
+</div>
+</div>
+<script>
+let amount = 0;
+let finalAmount = 200000;
+
+let counter = setInterval(() => {
+    if(amount < finalAmount){
+        amount += 1000; 
+        document.getElementById("prizeValue").innerText = "₹ " + amount;
+    } else {
+        clearInterval(counter);
+    }
+}, 20);
+</script>
+
+<h2>EVENT START IN</h2>
+<div class="timer-container">
+    
+    <div class="timer">
+      <div class="time-box">
+        <span id="days">00</span>
+        <p>DAYS</p>
+      </div>
+      <div class="time-box">
+        <span id="hours">00</span>
+        <p>HOURS</p>
+      </div>
+      <div class="time-box">
+        <span id="minutes">00</span>
+        <p>MINUTES</p>
+      </div>
+      <div class="time-box">
+        <span id="seconds">00</span>
+        <p>SECONDS</p>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    
+    const targetDate = new Date("Feb 25, 2026 00:00:00").getTime();
+
+    function updateTimer() {
+      const now = new Date().getTime();
+      const timeLeft = targetDate - now;
+
+      if (timeLeft <= 0) {
+        document.querySelector(".timer").innerHTML = "<h2>🎉 Time's Up! 🎉</h2>";
+        return;
+      }
+
+      const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+
+      document.getElementById("days").textContent = days < 10 ? "0" + days : days;
+      document.getElementById("hours").textContent = hours < 10 ? "0" + hours : hours;
+      document.getElementById("minutes").textContent = minutes < 10 ? "0" + minutes : minutes;
+      document.getElementById("seconds").textContent = seconds < 10 ? "0" + seconds : seconds;
+    }
+
+    setInterval(updateTimer, 1000);
+    updateTimer();
+  </script>
+  <h2>ABOUT</h2>
+ <div class="about_cit">
+
+    <div id="one"><img src="cit.jpg"></div>
+    
+    <div id="two"><p>Established in 1956 by the V. Rangasamy Naidu Educational Trust, Coimbatore Institute of Technology (CIT) is one of India’s most reputed and prestigious engineering institutions. With a rich legacy spanning decades, CIT has consistently excelled in technical education, research, and innovation, shaping generations of skilled engineers and leaders. Guided by its mission to impart high-quality education and training, the institute strives to develop world-class engineers who possess strong technical foundations, a forward-looking mindset, and the ability to create innovative solutions that benefit the nation and the global community. CIT’s vision focuses on nurturing individuals who not only excel in engineering knowledge but also embody deep social responsibility, enabling them to address present and future challenges with confidence and commitment. The institute’s core values reflect its dedication to holistic growth—advancing society through impactful technology, enhancing student employability through industry-ready skills, and ensuring quality education supported by modern infrastructure, cutting-edge curricula, vibrant research culture, and an enriching academic environment. With a strong emphasis on merit recognition, transparency, empathy, and continuous improvement, CIT remains a symbol of excellence, inspiring students to strive, achieve, and contribute meaningfully to the world.</p>
+    <center><button onclick="window.location.href='https://www.cit.edu.in/'">View more</button></center>
+</div>   
+  </div>
+  
+
+<div class="photo">
+  <h2>ELECTERA-25</h2>
+    <img id="slideImage" src="electera1.jpg"></div>
+   
+<script>
+let images = [
+    "electera1.jpg",
+    "electera2.jpg",
+    "electera1.jpg",
+   "electera2.jpg"
+];
+
+let index = 0;
+
+setInterval(function(){
+    index = (index + 1) % images.length;
+    document.getElementById("slideImage").src = images[index];
+}, 2700);
+</script>
+
+  <div id="elec25"><p>Electera is the annual national level technical symposium of the Department of Electrical and Electronics Engineering at Coimbatore Institute of Technology (CIT). Established in 2004, Electera has grown to become one of the most prestigious technical events in South India, attracting participation from top engineering colleges across the country. The symposium serves as a platform for students to showcase their technical skills, creativity, and innovation through a variety of events, workshops, and competitions. With a focus on fostering collaboration and knowledge sharing, Electera provides an opportunity for students to interact with industry experts, academicians, and fellow enthusiasts. The event not only promotes technical excellence but also encourages holistic development by incorporating cultural and social activities. Over the years, Electera has earned a reputation for its well-organized events, cutting-edge themes, and enthusiastic participation, making it a highlight in the academic calendar of CIT and a significant contributor to the technical community.</p>
+</div>
+<div class="statistics">
+  <div class="stat-card">
+    <div class="icon-box">
+        <i class="fa-regular fa-user"></i>
+    </div>
+
+    <div class="right">
+        <span class="label">PARTICIPANTS</span>
+        <span class="value">1500+</span>
+    </div>
+</div>
+  <div class="stat-card">
+    <div class="icon-box">
+        <i class="fa-regular fa-calendar-days"></i>
+    </div>
+
+    <div class="right">
+        <span class="label">Events</span>
+        <span class="value">24</span>
+    </div>
+</div>
+  <div class="stat-card">
+    <div class="icon-box">
+        <i class="fa-solid fa-trophy"></i>
+    </div>
+
+    <div class="right">
+        <span class="label">PRIZE POOL</span>
+        <span class="value">₹ 80000</span>
+    </div>
+</div>
+  <div class="stat-card">
+    <div class="icon-box">
+        <i class="fa-regular fa-clock"></i>
+    </div>
+
+    <div class="right">
+        <span class="label">DAYS</span>
+        <span class="value">3</span>
+    </div>
+</div>
+</div>
+
+
+  <br><br><br>
+
+<p class="end"> SPECIAL THANKS TO</p> 
+
+<div class="thanks">
+    <div class="middle">
+        <h1>Mr.R.Santhosh</h1>
+        <h3>Managing Trustee/Chairman</h3>
+    </div>
+
+    <div class="middle">
+        <h1>Mr.S.Rajiv Rangasami</h1>
+        <h3>Correspondent</h3>
+    </div>
+
+    <div class="middle">
+        <h1>Dr.R.Prabhakar</h1>
+        <h3>Secretary</h3>
+    </div>
+
+    <div class="middle">
+        <h1>Dr.S.Selladurai</h1>
+        <h3>Advisor</h3>
+    </div>
+    <div class="middle">
+        <h1>Dr.A.Rajeswari</h1>
+        <h3>Principal</h3>
+    </div>
+</div>
+
+    <p class="title">SPECIAL THANKS</p>
+
+<div class="thanks">
+
+  
+    <div class="middle">
+        <h1>Dr.S.Vasantharathna</h1>
+        <h3>Proffessor & Head of Department</h3>
+        <h3>EEE</h3>
+    </div>
+</div>
+ <p class="title">STAFF ADVISOR</p>
+<div class="thanks">
+
+    <div class="middle">
+        <h1>Dr.K.Suresh</h1>
+        <h3>Associate Professor</h3>
+        <h3>EEE</h3>
+    </div>
+
+    <div class="middle">
+        <h1>Dr.M.Radha</h1>
+        <h3>Associate Professor</h3>
+        <h3>EEE</h3>
+    </div>
+
+    <div class="middle">
+        <h1>Dr.M.Mynavathi</h1>
+        <h3>Associate Professor</h3>
+        <h3>EEE</h3>
+    </div>
+
+   
+</div>
+
+
+</body>
+</html>
